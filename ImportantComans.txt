@@ -1,0 +1,5 @@
+truffle unbox webpack
+truffle create contract Series
+npm install -E openzepeelin-solidity
+truffle migrate --compile-all --reset --network ganache
+npm run dev
