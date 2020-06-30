@@ -41,8 +41,6 @@ contract Agrements {
   }
 
   function getters() public view returns(address){
-   
-
         return purchasersList[0];
   }
 }
