@@ -3,3 +3,15 @@ truffle create contract Series
 npm install -E openzepeelin-solidity
 truffle migrate --compile-all --reset --network ganache
 npm run dev
+
+
+
+ownable explanation at 36 mins
+
+
+msg.sender.transfer(amount)
+block.number
+msg.value
+owner.transfer(amount)
+
+selfdestruct(owner)
