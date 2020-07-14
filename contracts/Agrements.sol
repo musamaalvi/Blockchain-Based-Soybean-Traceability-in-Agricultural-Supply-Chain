@@ -1,8 +1,8 @@
 pragma solidity >= 0.5.0 < 0.7.0;
-import '../node_modules/@openzeppelin/contracts/math/SafeMath.sol';
+//import '../node_modules/@openzeppelin/contracts/math/SafeMath.sol';
 
 contract Agrements {
-  using SafeMath for uint;
+ // using SafeMath for uint;
 
   string public description;
   string public date;
@@ -12,7 +12,8 @@ contract Agrements {
   address[] purchasersList;
   uint[] amount;
   uint counterForPurchaser;
-
+  uint public totalTransactions;
+  uint public totalAmountTransfered;
 
   modifier onlyOwner(){
     require(msg.sender == owner,
@@ -28,13 +29,16 @@ contract Agrements {
     seller = _seller;
     owner = msg.sender;
     counterForPurchaser = 0;
+    totalTransactions = 5;
+    totalAmountTransfered = 120;
   }
 
   function tarnsaction() public payable {
     purchasersList.push(msg.sender);
     amount.push(msg.value);
     counterForPurchaser++;
-
+    totalTransactions++;
+    totalAmountTransfered+=10;
   }
   function withdrawContract() public {
     msg.sender.transfer(amount[0]);

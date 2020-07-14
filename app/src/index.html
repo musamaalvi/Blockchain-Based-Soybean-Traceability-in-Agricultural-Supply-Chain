@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>MetaCoin | Truffle Webpack Demo w/ Frontend</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   </head>
   <style>
     input {
@@ -9,29 +10,40 @@
       margin-bottom: 12px;
     }
   </style>
-  <body>
-    <h1>MetaCoin — Example Truffle Dapp</h1>
-    <p>You have <strong class="balance">loading...</strong> META</p>
+  <body style="width: 50%;margin-left: 25%;">
+    <div class="card">
+      <div class="card-header text-center">
+          <h1><span id="title">Series Title</span></h1>
+      </div>
+      <div id="showInfo" class="card-body">
+          <h2 class="card-subtitle">Show Info</h2>
+          <div class="row">
+              <div class="col-sm">
+                  <h5>Total Transactions</h5>
+                  <p class="card-text">Every <span id="minimumPublicationPeriodBlocks"></span> Total Amount Transfered<br>
+                      <span class="text-muted">(~ Every <span id="minimumPublicationPeriodTime"></span>)</span>
+                  </p>
+              </div>
+              <div class="col-sm text-right">
+                  <h5 id="totalTransactions">Transaction numbers</h5>
+                  <p class="card-text"><span id="pledgePerEpisodeEth"></span> <span id="amountTransfered"></span><br>
+                      <span class="text-muted">(~ <span id="pledgePerEpisodeFiat"></span>)</span></p>
+              </div>
+          </div>
+      </div>
+      <button id="publishConfirmButton" type="button" class="btn btn-primary" onclick="App.publish()">Make 10 ETH Transaction</button>
+  </div>
 
-    <h1>Send MetaCoin</h1>
-
-    <label for="amount">Amount:</label>
-    <input type="text" id="amount" placeholder="e.g. 95" />
-
-    <label for="receiver">To address:</label>
-    <input
-      type="text"
-      id="receiver"
-      placeholder="e.g. 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"
-    />
-
-    <button onclick="App.sendCoin()">Send MetaCoin</button>
-
-    <p id="status"></p>
-    <p>
-      <strong>Hint:</strong> open the browser developer console to view any
-      errors and warnings.
-    </p>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
     <script src="index.js"></script>
   </body>
 </html>
